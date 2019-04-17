@@ -10,8 +10,7 @@
 
 typedef int (* CALLBACK) (const char* from, const char* to);
 
-int encode(const char* from, const char* to)
-{
+static int encode(const char* from, const char* to) {
   FILE *pInFile, *pOutFile ;
   int iRead = 0;
   adpcm_state_t state;
@@ -46,7 +45,7 @@ int encode(const char* from, const char* to)
   fclose(pOutFile);
 }
 
-int decode(const char* from, const char* to) {
+static int decode(const char* from, const char* to) {
   FILE *pInFile, *pOutFile ;
   int iRead = 0;
   adpcm_state_t state;
